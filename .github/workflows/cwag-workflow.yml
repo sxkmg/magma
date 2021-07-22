@@ -38,14 +38,22 @@ jobs:
       - name: Loading openvswitch kernel module
         if: github.event_name != 'pull_request'
         run: sudo modprobe openvswitch
-      - name: Run docker compose
+      - name: Authenticate to docker remote artifactory
         if: github.event_name != 'pull_request'
         # yamllint disable rule:line-length
         run: |
-              env
               docker login --username ${{ secrets.XWF_ARTIFACTORY_USER }} --password ${{ secrets.XWF_ARTIFACTORY_API_KEY }} ${{ secrets.XWF_ARTIFACTORY_LINK}}
+      - name: Pull images
+        if: github.event_name != 'pull_request'
+        # yamllint disable rule:line-length
+        run: |
               cd ${MAGMA_ROOT}/xwf/docker/
               docker-compose pull || true
+      - name: Pull images
+        if: github.event_name != 'pull_request'
+        # yamllint disable rule:line-length
+        run: |
+              cd ${MAGMA_ROOT}/xwf/docker/
               docker-compose build --parallel
               docker-compose up --detach
               docker exec tests pytest --log-cli-level=info code/tests.py
