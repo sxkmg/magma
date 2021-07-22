@@ -105,7 +105,9 @@ jobs:
               docker login --username ${{ secrets.XWF_ARTIFACTORY_USER }} --password ${{ secrets.XWF_ARTIFACTORY_API_KEY }} ${{ secrets.XWF_ARTIFACTORY_LINK}}
               cd ${MAGMA_ROOT}/xwf/docker/
               docker-compose pull || true
-              docker-compose build --parallel && docker-compose up --detach && docker exec tests pytest --log-cli-level=info code/tests.py
+              docker-compose build --parallel
+              docker-compose up --detach
+              docker exec tests pytest --log-cli-level=info code/tests.py
       - name: Extract commit title
         if: github.ref == 'refs/heads/master'
         env:
@@ -225,7 +227,7 @@ jobs:
         if: github.ref == 'refs/heads/master' && github.event_name != 'pull_request'
         # yamllint disable rule:line-length
         run: |
-            ./ci-scripts/tag-push-docker.sh --images 'goradius' --tag "${GITHUB_SHA:0:8}" --tag-latest true --project cwag
+            ./ci-scripts/tag-push-docker.sh --images 'goradius' --tag "${GITHUB_SHA:0:8}" --tag-latest true
       - name: Load openvswitch kernel module for xwf integ test
         # yamllint enable
         run: sudo modprobe openvswitch
@@ -237,7 +239,7 @@ jobs:
         if: github.ref == 'refs/heads/master' && github.event_name != 'pull_request'
         # yamllint disable rule:line-length
         run: |
-            ./ci-scripts/tag-push-docker.sh --images 'xwfm-integ-tests' --tag "${GITHUB_SHA:0:8}" --tag-latest true --project cwag
+            ./ci-scripts/tag-push-docker.sh --images 'xwfm-integ-tests' --tag "${GITHUB_SHA:0:8}" --tag-latest true
       - name: Extract commit title
         if: github.ref == 'refs/heads/master'
         env:
