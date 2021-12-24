@@ -36,6 +36,69 @@ class EnodebConfigBuilder:
         elif device is EnodebDeviceName.CAVIUM:
             # fdd config
             mconfig.fdd_config.earfcndl = 2405
+        elif device is EnodebDeviceName.BAICELLS_RTS:
+            device_id = '120200002618AGP0003'
+
+            mconfig.enb_configs_by_serial[device_id] \
+                .bandwidth_mhz = 20
+            mconfig.enb_configs_by_serial[device_id] \
+                .cell_id = 138777000
+            mconfig.enb_configs_by_serial[device_id] \
+                .device_class = "Baicells Nova-243 OD TDD"
+            mconfig.enb_configs_by_serial[device_id] \
+                .earfcndl = 44390
+            mconfig.enb_configs_by_serial[device_id] \
+                .pci = 260
+            mconfig.enb_configs_by_serial[device_id] \
+                .special_subframe_pattern = 7
+            mconfig.enb_configs_by_serial[device_id] \
+                .subframe_assignment = 2
+            mconfig.enb_configs_by_serial[device_id] \
+                .tac = 1
+            mconfig.enb_configs_by_serial[device_id] \
+                .transmit_enabled = False
+            mconfig.enb_configs_by_serial[device_id] \
+                .ho_algorithm_config.a1_threshold_rsrp = 0
+            mconfig.enb_configs_by_serial[device_id] \
+                .ho_algorithm_config.a2_threshold_rsrp = 0
+            mconfig.enb_configs_by_serial[device_id] \
+                .ho_algorithm_config.a3_offset = 0
+            mconfig.enb_configs_by_serial[device_id] \
+                .ho_algorithm_config.a3_offset_anr = 0
+            mconfig.enb_configs_by_serial[device_id] \
+                .ho_algorithm_config.a4_threshold_rsrp = 0
+            mconfig.enb_configs_by_serial[device_id] \
+                .ho_algorithm_config.lte_intra_a5_threshold_1_rsrp = 0
+            mconfig.enb_configs_by_serial[device_id] \
+                .ho_algorithm_config.lte_intra_a5_threshold_2_rsrp = 0
+            mconfig.enb_configs_by_serial[device_id] \
+                .ho_algorithm_config.lte_inter_anr_a5_threshold_1_rsrp = 0
+            mconfig.enb_configs_by_serial[device_id] \
+                .ho_algorithm_config.lte_inter_anr_a5_threshold_2_rsrp = 0
+            mconfig.enb_configs_by_serial[device_id] \
+                .ho_algorithm_config.b2_threshold1_rsrp = 0
+            mconfig.enb_configs_by_serial[device_id] \
+                .ho_algorithm_config.b2_threshold2_rsrp = 0
+            mconfig.enb_configs_by_serial[device_id] \
+                .ho_algorithm_config.b2_geran_irat_threshold = 8
+            mconfig.enb_configs_by_serial[device_id] \
+                .ho_algorithm_config.qrxlevmin_sib1 = -23
+            mconfig.enb_configs_by_serial[device_id] \
+                .ho_algorithm_config.qrxlevmin_sib3 = -23
+            mconfig.enb_configs_by_serial[device_id] \
+                .ho_algorithm_config.qrxlevminoffset = 8
+            mconfig.enb_configs_by_serial[device_id] \
+                .ho_algorithm_config.s_intrasearch = 0
+            mconfig.enb_configs_by_serial[device_id] \
+                .ho_algorithm_config.s_nonintrasearch = 0
+            mconfig.enb_configs_by_serial[device_id] \
+                .ho_algorithm_config.reselection_priority = 0
+            mconfig.enb_configs_by_serial[device_id] \
+                .ho_algorithm_config.threshservinglow = 0
+            mconfig.enb_configs_by_serial[device_id] \
+                .ho_algorithm_config.ciphering_algorithm = "128-EEA1,128-EEA2"
+            mconfig.enb_configs_by_serial[device_id] \
+                .ho_algorithm_config.integrity_algorithm = "128-EIA1,128-EIA2"
         else:
             # tdd config
             mconfig.tdd_config.earfcndl = 39150

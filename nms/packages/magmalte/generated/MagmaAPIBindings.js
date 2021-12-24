@@ -681,8 +681,6 @@ export type health = {
     update_interval_secs ? : number,
 };
 export type ho_algorithm_configuration = {
-    LTE_INTER_ANR_A5_THRESHOLD_1_RSRP ? : number,
-    LTE_INTER_ANR_A5_THRESHOLD_2_RSRP ? : number,
     a1_threshold_rsrp ? : number,
     a2_threshold_rsrp ? : number,
     a3_offset ? : number,
@@ -698,6 +696,8 @@ export type ho_algorithm_configuration = {
     lte_a2_threshold_rsrp_irat_volte ? : number,
     lte_a2_threshold_rsrq ? : number,
     lte_a2_threshold_rsrq_irat_volte ? : number,
+    lte_inter_anr_a5_threshold_1_rsrp ? : number,
+    lte_inter_anr_a5_threshold_2_rsrp ? : number,
     lte_intra_a5_threshold_1_rsrp ? : number,
     lte_intra_a5_threshold_2_rsrp ? : number,
     qrxlevmin_sib1 ? : number,

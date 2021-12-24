@@ -19,6 +19,7 @@ from magma.enodebd.data_models.data_model import DataModel, TrParam
 from magma.enodebd.data_models.data_model_parameters import (
     ParameterName,
     TrParameterType,
+    BaicellsParameterName,
 )
 from magma.enodebd.device_config.enodeb_config_postprocessor import (
     EnodebConfigurationPostProcessor,
@@ -222,118 +223,93 @@ class BaicellsRTSTrDataModel(DataModel):
         ),
 
         # Ho algorithm
-        ParameterName.A1_THRESHOLD_RSRP: TrParam(
+        BaicellsParameterName.HO_A1_THRESHOLD_RSRP: TrParam(
             FAPSERVICE_PATH + 'CellConfig.LTE.RAN.Mobility.ConnMode.EUTRA.A1ThresholdRSRP', True, TrParameterType.INT,
             False,
         ),
-        ParameterName.LTE_A1_THRESHOLD_RSRQ: TrParam(
-            FAPSERVICE_PATH + 'CellConfig.LTE.RAN.Mobility.ConnMode.EUTRA.A1ThresholdRSRP', True, TrParameterType.INT,
-            False,
-        ),
-        ParameterName.HYSTERESIS: TrParam(
-            FAPSERVICE_PATH + 'CellConfig.LTE.RAN.Mobility.ConnMode.EUTRA.A1ThresholdRSRP', True, TrParameterType.INT,
-            False,
-        ),
-        ParameterName.TIME_TO_TRIGGER: TrParam(
-            FAPSERVICE_PATH + 'CellConfig.LTE.RAN.Mobility.ConnMode.EUTRA.A1ThresholdRSRP', True,
-            TrParameterType.STRING,
-            False,
-        ),
-        ParameterName.A2_THRESHOLD_RSRP: TrParam(
+        BaicellsParameterName.HO_A2_THRESHOLD_RSRP: TrParam(
             FAPSERVICE_PATH + 'CellConfig.LTE.RAN.Mobility.ConnMode.EUTRA.A2ThresholdRSRP', True, TrParameterType.INT,
             False,
         ),
-        ParameterName.LTE_A2_THRESHOLD_RSRQ: TrParam(
-            FAPSERVICE_PATH + 'CellConfig.LTE.RAN.Mobility.ConnMode.EUTRA.A2ThresholdRSRP', True, TrParameterType.INT,
-            False,
-        ),
-        ParameterName.LTE_A2_THRESHOLD_RSRP_IRAT_VOLTE: TrParam(
-            FAPSERVICE_PATH + 'CellConfig.LTE.RAN.Mobility.ConnMode.EUTRA.A2ThresholdRSRP', True, TrParameterType.INT,
-            False,
-        ),
-        ParameterName.LTE_A2_THRESHOLD_RSRQ_IRAT_VOLTE: TrParam(
-            FAPSERVICE_PATH + 'CellConfig.LTE.RAN.Mobility.ConnMode.EUTRA.A2ThresholdRSRP', True, TrParameterType.INT,
-            False,
-        ),
-        ParameterName.A3_OFFSET: TrParam(
+        BaicellsParameterName.HO_A3_OFFSET: TrParam(
             FAPSERVICE_PATH + 'X_BAICELLS.COM.LTE.HOVA3Offset', True, TrParameterType.INT,
             False,
         ),
-        ParameterName.A3_OFFSET_ANR: TrParam(
+        BaicellsParameterName.HO_A3_OFFSET_ANR: TrParam(
             FAPSERVICE_PATH + 'X_BAICELLS.COM.LTE.ANR.AnrA3Offset', True, TrParameterType.INT,
             False,
         ),
-        ParameterName.A4_THRESHOLD_RSRP: TrParam(
+        BaicellsParameterName.HO_A4_THRESHOLD_RSRP: TrParam(
             FAPSERVICE_PATH + 'X_BAICELLS.LTE.RAN.Mobility.ConnMode.EUTRA.A4ThresholdRSRP', True, TrParameterType.INT,
             False,
         ),
-        ParameterName.LTE_INTRA_A5_THRESHOLD_1_RSRP: TrParam(
+        BaicellsParameterName.HO_LTE_INTRA_A5_THRESHOLD_1_RSRP: TrParam(
             FAPSERVICE_PATH + 'X_BAICELLS.COM.LTE.HOVInterA5Threshold1RSRP', True, TrParameterType.INT,
             False,
         ),
-        ParameterName.LTE_INTRA_A5_THRESHOLD_2_RSRP: TrParam(
+        BaicellsParameterName.HO_LTE_INTRA_A5_THRESHOLD_2_RSRP: TrParam(
             FAPSERVICE_PATH + 'X_BAICELLS.COM.LTE.HOVInterA5Threshold2RSRP', True, TrParameterType.INT,
             False,
         ),
-        ParameterName.LTE_INTER_ANR_A5_THRESHOLD_1_RSRP: TrParam(
+        BaicellsParameterName.HO_LTE_INTER_ANR_A5_THRESHOLD_1_RSRP: TrParam(
             FAPSERVICE_PATH + 'X_BAICELLS.COM.LTE.ANR.InterAnrA5Threshold1RSRP', True, TrParameterType.INT,
             False,
-            ),
-        ParameterName.LTE_INTER_ANR_A5_THRESHOLD_2_RSRP: TrParam(
+        ),
+        BaicellsParameterName.HO_LTE_INTER_ANR_A5_THRESHOLD_2_RSRP: TrParam(
             FAPSERVICE_PATH + 'X_BAICELLS.COM.LTE.ANR.InterAnrA5Threshold2RSRP', True, TrParameterType.INT,
             False,
-            ),
-        ParameterName.B2_THRESHOLD1_RSRP: TrParam(
+        ),
+        BaicellsParameterName.HO_B2_THRESHOLD1_RSRP: TrParam(
             FAPSERVICE_PATH + 'X_BAICELLS.COM.LTE.IRAT.B2threshold1RsrpHO', True, TrParameterType.UNSIGNED_INT,
             False,
         ),
-        ParameterName.B2_THRESHOLD2_RSRP: TrParam(
+        BaicellsParameterName.HO_B2_THRESHOLD2_RSRP: TrParam(
             FAPSERVICE_PATH + 'CellConfig.LTE.RAN.Mobility.ConnMode.IRAT.X_BAICELLS_COM_UTRANTDD.B2Threshold2UTRATDDRSCP',
             True, TrParameterType.INT,
             False,
         ),
-        ParameterName.B2_GERAN_IRAT_THRESHOLD: TrParam(
+        BaicellsParameterName.HO_B2_GERAN_IRAT_THRESHOLD: TrParam(
             FAPSERVICE_PATH + 'X_BAICELLS.COM.LTE.IRAT.B2Threshold2Geran', True, TrParameterType.UNSIGNED_INT,
             False,
         ),
-        ParameterName.QRXLEVMIN_SIB1: TrParam(
+        BaicellsParameterName.HO_QRXLEVMIN_CHOICE: TrParam(
             FAPSERVICE_PATH + 'CellConfig.LTE.RAN.Mobility.IdleMode.IntraFreq.QRxLevMinSIB1', True, TrParameterType.INT,
             False,
         ),
-        ParameterName.QRXLEVMINOFFSET: TrParam(
+        BaicellsParameterName.HO_QRXLEVMINOFFSET: TrParam(
             FAPSERVICE_PATH + 'CellConfig.LTE.RAN.Mobility.IdleMode.IntraFreq.QRxLevMinOffset', True,
             TrParameterType.UNSIGNED_INT,
             False,
         ),
-        ParameterName.S_INTRASEARCH: TrParam(
+        BaicellsParameterName.HO_S_INTRASEARCH: TrParam(
             FAPSERVICE_PATH + 'CellConfig.LTE.RAN.Mobility.IdleMode.IntraFreq.SIntraSearch', True,
             TrParameterType.UNSIGNED_INT,
             False,
         ),
-        ParameterName.S_NONINTRASEARCH: TrParam(
+        BaicellsParameterName.HO_S_NONINTRASEARCH: TrParam(
             FAPSERVICE_PATH + 'CellConfig.LTE.RAN.Mobility.IdleMode.IntraFreq.SNonIntraSearch', True,
             TrParameterType.UNSIGNED_INT,
             False,
         ),
-        ParameterName.QRXLEVMIN_SIB3: TrParam(
+        BaicellsParameterName.HO_QRXLEVMIN_RESELECTION: TrParam(
             FAPSERVICE_PATH + 'CellConfig.LTE.RAN.Mobility.IdleMode.IntraFreq.QRxLevMinSIB3', True, TrParameterType.INT,
             False,
         ),
-        ParameterName.RESELECTION_PRIORITY: TrParam(
+        BaicellsParameterName.HO_RESELECTION_PRIORITY: TrParam(
             FAPSERVICE_PATH + 'CellConfig.LTE.RAN.Mobility.IdleMode.IntraFreq.CellReselectionPriority', True,
             TrParameterType.UNSIGNED_INT,
             False,
         ),
-        ParameterName.THRESHSERVINGLOW: TrParam(
+        BaicellsParameterName.HO_THRESHSERVINGLOW: TrParam(
             FAPSERVICE_PATH + 'CellConfig.LTE.RAN.Mobility.IdleMode.IntraFreq.ThreshServingLow', True,
             TrParameterType.UNSIGNED_INT,
             False,
         ),
-        ParameterName.CIPHERING_ALGORITHM: TrParam(
+        BaicellsParameterName.HO_CIPHERING_ALGORITHM: TrParam(
             FAPSERVICE_PATH + 'CellConfig.LTE.EPC.AllowedCipheringAlgorithmList', True, TrParameterType.STRING,
             False,
         ),
-        ParameterName.INTEGRITY_ALGORITHM: TrParam(
+        BaicellsParameterName.HO_INTEGRITY_ALGORITHM: TrParam(
             FAPSERVICE_PATH + 'CellConfig.LTE.EPC.AllowedIntegrityProtectionAlgorithmList', True,
             TrParameterType.STRING,
             False,

@@ -582,7 +582,7 @@ export function RanEdit(props: Props) {
               <AltFormField label={'A1 Thraeshold Rsrp'}>
                 <OutlinedInput
                   data-testid="a1_threshold_rsrp"
-                  placeholder="Enter A1THRESHOLDRSRP"
+                  placeholder="Enter A1ThresholdRSRP"
                   fullWidth={true}
                   value={optConfig.a1_threshold_rsrp}
                   onChange={({target}) =>
@@ -593,7 +593,7 @@ export function RanEdit(props: Props) {
               <AltFormField label={'lte a1 threshold rsrq'}>
                 <OutlinedInput
                   data-testid="lte_a1_threshold_rsrq"
-                  placeholder="Enter LTEA1THRESHOLDRSRQ"
+                  placeholder="Enter A1ThresholdRSRP"
                   fullWidth={true}
                   value={optConfig.lte_a1_threshold_rsrq}
                   onChange={({target}) =>
@@ -604,7 +604,7 @@ export function RanEdit(props: Props) {
               <AltFormField label={'hysteresis'}>
                 <OutlinedInput
                   data-testid="hysteresis"
-                  placeholder="Enter HYSTERESIS"
+                  placeholder="Enter Hysteresis"
                   fullWidth={true}
                   value={optConfig.hysteresis}
                   onChange={({target}) =>
@@ -615,7 +615,7 @@ export function RanEdit(props: Props) {
               <AltFormField label={'time to trigger'}>
                 <OutlinedInput
                   data-testid="time_to_trigger"
-                  placeholder="Enter TIMETOTRIGGER"
+                  placeholder="Enter TimeToTrigger"
                   fullWidth={true}
                   value={optConfig.time_to_trigger.toString()}
                   onChange={({target}) =>
@@ -626,7 +626,7 @@ export function RanEdit(props: Props) {
               <AltFormField label={'a2 threshold rsrp'}>
                 <OutlinedInput
                   data-testid="a2_threshold_rsrp"
-                  placeholder="Enter A2THRESHOLDRSRP"
+                  placeholder="Enter A2ThresholdRSRP"
                   fullWidth={true}
                   value={optConfig.a2_threshold_rsrp}
                   onChange={({target}) =>
@@ -637,7 +637,7 @@ export function RanEdit(props: Props) {
               <AltFormField label={'lte a2 threshold rsrq'}>
                 <OutlinedInput
                   data-testid="lte_a2_threshold_rsrq"
-                  placeholder="Enter LTEA2THRESHOLDRSRQ"
+                  placeholder="Enter Ltea2ThresholdRSRQ"
                   fullWidth={true}
                   value={optConfig.lte_a2_threshold_rsrq}
                   onChange={({target}) =>
@@ -648,7 +648,7 @@ export function RanEdit(props: Props) {
               <AltFormField label={'lte a2 threshold rsrp irat volte'}>
                 <OutlinedInput
                   data-testid="lte_a2_threshold_rsrp_irat_volte"
-                  placeholder="Enter LTEA2THRESHOLDRSRPIRATVOLTE"
+                  placeholder="Enter Ltea2ThresholdRSRPiratvolte"
                   fullWidth={true}
                   value={optConfig.lte_a2_threshold_rsrp_irat_volte}
                   onChange={({target}) =>
@@ -662,7 +662,7 @@ export function RanEdit(props: Props) {
               <AltFormField label={'lte a2 threshold rsrq irat volte'}>
                 <OutlinedInput
                   data-testid="lte_a2_threshold_rsrq_irat_volte"
-                  placeholder="Enter LTEA2THRESHOLDRSRQIRATVOLTE"
+                  placeholder="Enter Ltea2ThresholdRSRQiratvolte"
                   fullWidth={true}
                   value={optConfig.lte_a2_threshold_rsrq_irat_volte}
                   onChange={({target}) =>
@@ -676,7 +676,7 @@ export function RanEdit(props: Props) {
               <AltFormField label={'a3 offset'}>
                 <OutlinedInput
                   data-testid="a3_offset"
-                  placeholder="Enter A3OFFSET"
+                  placeholder="Enter A3OffSet"
                   fullWidth={true}
                   value={optConfig.a3_offset}
                   onChange={({target}) =>
@@ -687,7 +687,7 @@ export function RanEdit(props: Props) {
               <AltFormField label={'a3 offset anr'}>
                 <OutlinedInput
                   data-testid="a3_offset_anr"
-                  placeholder="Enter A3OFFSETANR"
+                  placeholder="Enter A3OffSetANR"
                   fullWidth={true}
                   value={optConfig.a3_offset_anr}
                   onChange={({target}) =>
@@ -698,7 +698,7 @@ export function RanEdit(props: Props) {
               <AltFormField label={'a4 threshold rsrp'}>
                 <OutlinedInput
                   data-testid="a4_threshold_rsrp"
-                  placeholder="Enter A4THRESHOLDRSRP"
+                  placeholder="Enter A4ThresholdRSRP"
                   fullWidth={true}
                   value={optConfig.a4_threshold_rsrp}
                   onChange={({target}) =>
@@ -709,7 +709,7 @@ export function RanEdit(props: Props) {
               <AltFormField label={'lte intraa5 threshold1 rsrp'}>
                 <OutlinedInput
                   data-testid="lte_intra_a5_threshold_1_rsrp"
-                  placeholder="Enter LTEINTRAA5THRESHOLD1RSRP"
+                  placeholder="Enter HOVInterA5Threshold1RSRP"
                   fullWidth={true}
                   value={optConfig.lte_intra_a5_threshold_1_rsrp}
                   onChange={({target}) =>
@@ -723,7 +723,7 @@ export function RanEdit(props: Props) {
               <AltFormField label={'lte intraa5 threshold2 rsrp'}>
                 <OutlinedInput
                   data-testid="lte_intra_a5_threshold_2_rsrp"
-                  placeholder="Enter LTEINTRAA5THRESHOLD2RSRP"
+                  placeholder="Enter HOVInterA5Threshold2RSRP"
                   fullWidth={true}
                   value={optConfig.lte_intra_a5_threshold_2_rsrp}
                   onChange={({target}) =>
@@ -737,7 +737,7 @@ export function RanEdit(props: Props) {
               <AltFormField label={'lte interanra5 threshold1 rsrp'}>
                 <OutlinedInput
                   data-testid="lte_inter_anr_a5_threshold_1_rsrp"
-                  placeholder="Enter LTEINTERANRA5THRESHOLD1RSRP"
+                  placeholder="Enter InterAnrA5Threshold1RSRP"
                   fullWidth={true}
                   value={optConfig.lte_inter_anr_a5_threshold_1_rsrp}
                   onChange={({target}) =>
@@ -751,7 +751,7 @@ export function RanEdit(props: Props) {
               <AltFormField label={'lte interanra5 threshold2 rsrp'}>
                 <OutlinedInput
                   data-testid="lte_inter_anr_a5_threshold_2_rsrp"
-                  placeholder="Enter LTEINTERANRA5THRESHOLD2RSRP"
+                  placeholder="Enter InterAnrA5Threshold2RSRP"
                   fullWidth={true}
                   value={optConfig.lte_inter_anr_a5_threshold_2_rsrp}
                   onChange={({target}) =>
@@ -765,7 +765,7 @@ export function RanEdit(props: Props) {
               <AltFormField label={'b2 threshold1 rsrp'}>
                 <OutlinedInput
                   data-testid="b2_threshold1_rsrp"
-                  placeholder="Enter B2THRESHOLD1RSRP"
+                  placeholder="Enter B2threshold1RsrpHO"
                   fullWidth={true}
                   value={optConfig.b2_threshold1_rsrp}
                   onChange={({target}) =>
@@ -776,7 +776,7 @@ export function RanEdit(props: Props) {
               <AltFormField label={'b2 threshold2 rsrp'}>
                 <OutlinedInput
                   data-testid="b2_threshold2_rsrp"
-                  placeholder="Enter B2THRESHOLD2RSRP"
+                  placeholder="Enter B2Threshold2UTRATDDRSCP"
                   fullWidth={true}
                   value={optConfig.b2_threshold2_rsrp}
                   onChange={({target}) =>
@@ -787,7 +787,7 @@ export function RanEdit(props: Props) {
               <AltFormField label={'b2 geran irat threshold'}>
                 <OutlinedInput
                   data-testid="b2_geran_irat_threshold"
-                  placeholder="Enter B2GERANIRATTHRESHOLD"
+                  placeholder="Enter B2Threshold2Geran"
                   fullWidth={true}
                   value={optConfig.b2_geran_irat_threshold}
                   onChange={({target}) =>
@@ -798,7 +798,7 @@ export function RanEdit(props: Props) {
               <AltFormField label={'qrxlevmin sib1'}>
                 <OutlinedInput
                   data-testid="qrxlevmin_sib1"
-                  placeholder="Enter QRXLEVMINSIB1"
+                  placeholder="Enter QRxLevMinSIB1"
                   fullWidth={true}
                   value={optConfig.qrxlevmin_sib1}
                   onChange={({target}) =>
@@ -809,7 +809,7 @@ export function RanEdit(props: Props) {
               <AltFormField label={'qrxlevminoffset'}>
                 <OutlinedInput
                   data-testid="qrxlevminoffset"
-                  placeholder="Enter QRXLEVMINOFFSET"
+                  placeholder="Enter QRxLevMinOffset"
                   fullWidth={true}
                   value={optConfig.qrxlevminoffset}
                   onChange={({target}) =>
@@ -820,7 +820,7 @@ export function RanEdit(props: Props) {
               <AltFormField label={'s intrasearch'}>
                 <OutlinedInput
                   data-testid="s_intrasearch"
-                  placeholder="Enter SINTRASEARCH"
+                  placeholder="Enter SIntraSearch"
                   fullWidth={true}
                   value={optConfig.s_intrasearch}
                   onChange={({target}) =>
@@ -831,7 +831,7 @@ export function RanEdit(props: Props) {
               <AltFormField label={'s nonintrasearch'}>
                 <OutlinedInput
                   data-testid="s_nonintrasearch"
-                  placeholder="Enter SNONINTRASEARCH"
+                  placeholder="Enter SNonIntraSearch"
                   fullWidth={true}
                   value={optConfig.s_nonintrasearch}
                   onChange={({target}) =>
@@ -842,7 +842,7 @@ export function RanEdit(props: Props) {
               <AltFormField label={'qrxlevmin sib3'}>
                 <OutlinedInput
                   data-testid="qrxlevmin_sib3"
-                  placeholder="Enter QRXLEVMINSIB3"
+                  placeholder="Enter QRxLevMinSIB3"
                   fullWidth={true}
                   value={optConfig.qrxlevmin_sib3}
                   onChange={({target}) =>
@@ -853,7 +853,7 @@ export function RanEdit(props: Props) {
               <AltFormField label={'reselection priority'}>
                 <OutlinedInput
                   data-testid="reselection_priority"
-                  placeholder="Enter RESELECTIONPRIORITY"
+                  placeholder="Enter CellReselectionPriority"
                   fullWidth={true}
                   value={optConfig.reselection_priority}
                   onChange={({target}) =>
@@ -864,7 +864,7 @@ export function RanEdit(props: Props) {
               <AltFormField label={'threshservinglow'}>
                 <OutlinedInput
                   data-testid="threshservinglow"
-                  placeholder="Enter THRESHSERVINGLOW"
+                  placeholder="Enter ThreshServingLow"
                   fullWidth={true}
                   value={optConfig.threshservinglow}
                   onChange={({target}) =>
@@ -876,7 +876,7 @@ export function RanEdit(props: Props) {
               <AltFormField label={'ciphering algorithm'}>
                 <OutlinedInput
                   data-testid="ciphering_algorithm"
-                  placeholder="Enter CIPHERINGALGORITHM"
+                  placeholder="Enter AllowedCipheringAlgorithmList"
                   fullWidth={true}
                   value={optConfig.ciphering_algorithm.toString()}
                   onChange={({target}) =>
@@ -890,7 +890,7 @@ export function RanEdit(props: Props) {
               <AltFormField label={'integrity algorithm'}>
                 <OutlinedInput
                   data-testid="integrity_algorithm"
-                  placeholder="Enter INTEGRITYALGORITHM"
+                  placeholder="Enter AllowedIntegrityProtectionAlgorithmList"
                   fullWidth={true}
                   value={optConfig.integrity_algorithm.toString()}
                   onChange={({target}) =>

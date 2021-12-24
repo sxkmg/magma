@@ -8,27 +8,29 @@ package models
 import (
 	strfmt "github.com/go-openapi/strfmt"
 
+	"github.com/go-openapi/errors"
 	"github.com/go-openapi/swag"
+	"github.com/go-openapi/validate"
 )
 
 // HoAlgorithmConfiguration ho algorithm configuration for enodeb configuration.
 // swagger:model hoAlgorithmConfiguration
 type HoAlgorithmConfiguration struct {
 
-	// l t e i n t e r a n r a5 t h r e s h o l d 1 r s r p
-	LTEINTERANRA5THRESHOLD1RSRP int32 `json:"LTE_INTER_ANR_A5_THRESHOLD_1_RSRP,omitempty"`
-
-	// l t e i n t e r a n r a5 t h r e s h o l d 2 r s r p
-	LTEINTERANRA5THRESHOLD2RSRP int32 `json:"LTE_INTER_ANR_A5_THRESHOLD_2_RSRP,omitempty"`
-
 	// a1 threshold rsrp
-	A1ThresholdRsrp uint32 `json:"a1_threshold_rsrp,omitempty"`
+	// Maximum: 97
+	// Minimum: 0
+	A1ThresholdRsrp *uint32 `json:"a1_threshold_rsrp,omitempty"`
 
 	// a2 threshold rsrp
-	A2ThresholdRsrp int32 `json:"a2_threshold_rsrp,omitempty"`
+	// Maximum: 97
+	// Minimum: 0
+	A2ThresholdRsrp *int32 `json:"a2_threshold_rsrp,omitempty"`
 
 	// a3 offset
-	A3Offset int32 `json:"a3_offset,omitempty"`
+	// Maximum: 30
+	// Minimum: -30
+	A3Offset *int32 `json:"a3_offset,omitempty"`
 
 	// a3 offset anr
 	A3OffsetAnr int32 `json:"a3_offset_anr,omitempty"`
@@ -37,22 +39,30 @@ type HoAlgorithmConfiguration struct {
 	A4ThresholdRsrp int32 `json:"a4_threshold_rsrp,omitempty"`
 
 	// b2 geran irat threshold
-	B2GeranIratThreshold uint32 `json:"b2_geran_irat_threshold,omitempty"`
+	// Maximum: 63
+	// Minimum: 0
+	B2GeranIratThreshold *uint32 `json:"b2_geran_irat_threshold,omitempty"`
 
 	// b2 threshold1 rsrp
-	B2Threshold1Rsrp uint32 `json:"b2_threshold1_rsrp,omitempty"`
+	// Maximum: 97
+	// Minimum: 0
+	B2Threshold1Rsrp *uint32 `json:"b2_threshold1_rsrp,omitempty"`
 
 	// b2 threshold2 rsrp
-	B2Threshold2Rsrp int32 `json:"b2_threshold2_rsrp,omitempty"`
+	// Maximum: 91
+	// Minimum: -5
+	B2Threshold2Rsrp *int32 `json:"b2_threshold2_rsrp,omitempty"`
 
 	// ciphering algorithm
-	CipheringAlgorithm string `json:"ciphering_algorithm,omitempty"`
+	CipheringAlgorithm *string `json:"ciphering_algorithm,omitempty"`
 
 	// hysteresis
-	Hysteresis int32 `json:"hysteresis,omitempty"`
+	// Maximum: 30
+	// Minimum: 0
+	Hysteresis *int32 `json:"hysteresis,omitempty"`
 
 	// integrity algorithm
-	IntegrityAlgorithm string `json:"integrity_algorithm,omitempty"`
+	IntegrityAlgorithm *string `json:"integrity_algorithm,omitempty"`
 
 	// lte a1 threshold rsrq
 	LteA1ThresholdRsrq int32 `json:"lte_a1_threshold_rsrq,omitempty"`
@@ -66,29 +76,55 @@ type HoAlgorithmConfiguration struct {
 	// lte a2 threshold rsrq irat volte
 	LteA2ThresholdRsrqIratVolte int32 `json:"lte_a2_threshold_rsrq_irat_volte,omitempty"`
 
+	// lte inter anr a5 threshold 1 rsrp
+	// Maximum: 97
+	// Minimum: 0
+	LteInterAnrA5Threshold1Rsrp *int32 `json:"lte_inter_anr_a5_threshold_1_rsrp,omitempty"`
+
+	// lte inter anr a5 threshold 2 rsrp
+	// Maximum: 97
+	// Minimum: 0
+	LteInterAnrA5Threshold2Rsrp *int32 `json:"lte_inter_anr_a5_threshold_2_rsrp,omitempty"`
+
 	// lte intra a5 threshold 1 rsrp
-	LteIntraA5Threshold1Rsrp int32 `json:"lte_intra_a5_threshold_1_rsrp,omitempty"`
+	// Maximum: 97
+	// Minimum: 0
+	LteIntraA5Threshold1Rsrp *int32 `json:"lte_intra_a5_threshold_1_rsrp,omitempty"`
 
 	// lte intra a5 threshold 2 rsrp
-	LteIntraA5Threshold2Rsrp int32 `json:"lte_intra_a5_threshold_2_rsrp,omitempty"`
+	// Maximum: 97
+	// Minimum: 0
+	LteIntraA5Threshold2Rsrp *int32 `json:"lte_intra_a5_threshold_2_rsrp,omitempty"`
 
 	// qrxlevmin sib1
+	// Maximum: -22
+	// Minimum: -70
 	QrxlevminSib1 int32 `json:"qrxlevmin_sib1,omitempty"`
 
 	// qrxlevmin sib3
+	// Maximum: -22
+	// Minimum: -70
 	QrxlevminSib3 int32 `json:"qrxlevmin_sib3,omitempty"`
 
 	// qrxlevminoffset
+	// Maximum: 8
+	// Minimum: 1
 	Qrxlevminoffset uint32 `json:"qrxlevminoffset,omitempty"`
 
 	// reselection priority
+	// Maximum: 65535
+	// Minimum: 1
 	ReselectionPriority uint32 `json:"reselection_priority,omitempty"`
 
 	// s intrasearch
-	SIntrasearch uint32 `json:"s_intrasearch,omitempty"`
+	// Maximum: 31
+	// Minimum: 0
+	SIntrasearch *uint32 `json:"s_intrasearch,omitempty"`
 
 	// s nonintrasearch
-	SNonintrasearch uint32 `json:"s_nonintrasearch,omitempty"`
+	// Maximum: 31
+	// Minimum: 0
+	SNonintrasearch *uint32 `json:"s_nonintrasearch,omitempty"`
 
 	// threshservinglow
 	Threshservinglow uint32 `json:"threshservinglow,omitempty"`
@@ -99,6 +135,368 @@ type HoAlgorithmConfiguration struct {
 
 // Validate validates this ho algorithm configuration
 func (m *HoAlgorithmConfiguration) Validate(formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.validateA1ThresholdRsrp(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateA2ThresholdRsrp(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateA3Offset(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateB2GeranIratThreshold(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateB2Threshold1Rsrp(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateB2Threshold2Rsrp(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateHysteresis(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateLteInterAnrA5Threshold1Rsrp(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateLteInterAnrA5Threshold2Rsrp(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateLteIntraA5Threshold1Rsrp(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateLteIntraA5Threshold2Rsrp(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateQrxlevminSib1(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateQrxlevminSib3(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateQrxlevminoffset(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateReselectionPriority(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateSIntrasearch(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateSNonintrasearch(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *HoAlgorithmConfiguration) validateA1ThresholdRsrp(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.A1ThresholdRsrp) { // not required
+		return nil
+	}
+
+	if err := validate.MinimumInt("a1_threshold_rsrp", "body", int64(*m.A1ThresholdRsrp), 0, false); err != nil {
+		return err
+	}
+
+	if err := validate.MaximumInt("a1_threshold_rsrp", "body", int64(*m.A1ThresholdRsrp), 97, false); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *HoAlgorithmConfiguration) validateA2ThresholdRsrp(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.A2ThresholdRsrp) { // not required
+		return nil
+	}
+
+	if err := validate.MinimumInt("a2_threshold_rsrp", "body", int64(*m.A2ThresholdRsrp), 0, false); err != nil {
+		return err
+	}
+
+	if err := validate.MaximumInt("a2_threshold_rsrp", "body", int64(*m.A2ThresholdRsrp), 97, false); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *HoAlgorithmConfiguration) validateA3Offset(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.A3Offset) { // not required
+		return nil
+	}
+
+	if err := validate.MinimumInt("a3_offset", "body", int64(*m.A3Offset), -30, false); err != nil {
+		return err
+	}
+
+	if err := validate.MaximumInt("a3_offset", "body", int64(*m.A3Offset), 30, false); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *HoAlgorithmConfiguration) validateB2GeranIratThreshold(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.B2GeranIratThreshold) { // not required
+		return nil
+	}
+
+	if err := validate.MinimumInt("b2_geran_irat_threshold", "body", int64(*m.B2GeranIratThreshold), 0, false); err != nil {
+		return err
+	}
+
+	if err := validate.MaximumInt("b2_geran_irat_threshold", "body", int64(*m.B2GeranIratThreshold), 63, false); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *HoAlgorithmConfiguration) validateB2Threshold1Rsrp(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.B2Threshold1Rsrp) { // not required
+		return nil
+	}
+
+	if err := validate.MinimumInt("b2_threshold1_rsrp", "body", int64(*m.B2Threshold1Rsrp), 0, false); err != nil {
+		return err
+	}
+
+	if err := validate.MaximumInt("b2_threshold1_rsrp", "body", int64(*m.B2Threshold1Rsrp), 97, false); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *HoAlgorithmConfiguration) validateB2Threshold2Rsrp(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.B2Threshold2Rsrp) { // not required
+		return nil
+	}
+
+	if err := validate.MinimumInt("b2_threshold2_rsrp", "body", int64(*m.B2Threshold2Rsrp), -5, false); err != nil {
+		return err
+	}
+
+	if err := validate.MaximumInt("b2_threshold2_rsrp", "body", int64(*m.B2Threshold2Rsrp), 91, false); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *HoAlgorithmConfiguration) validateHysteresis(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.Hysteresis) { // not required
+		return nil
+	}
+
+	if err := validate.MinimumInt("hysteresis", "body", int64(*m.Hysteresis), 0, false); err != nil {
+		return err
+	}
+
+	if err := validate.MaximumInt("hysteresis", "body", int64(*m.Hysteresis), 30, false); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *HoAlgorithmConfiguration) validateLteInterAnrA5Threshold1Rsrp(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.LteInterAnrA5Threshold1Rsrp) { // not required
+		return nil
+	}
+
+	if err := validate.MinimumInt("lte_inter_anr_a5_threshold_1_rsrp", "body", int64(*m.LteInterAnrA5Threshold1Rsrp), 0, false); err != nil {
+		return err
+	}
+
+	if err := validate.MaximumInt("lte_inter_anr_a5_threshold_1_rsrp", "body", int64(*m.LteInterAnrA5Threshold1Rsrp), 97, false); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *HoAlgorithmConfiguration) validateLteInterAnrA5Threshold2Rsrp(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.LteInterAnrA5Threshold2Rsrp) { // not required
+		return nil
+	}
+
+	if err := validate.MinimumInt("lte_inter_anr_a5_threshold_2_rsrp", "body", int64(*m.LteInterAnrA5Threshold2Rsrp), 0, false); err != nil {
+		return err
+	}
+
+	if err := validate.MaximumInt("lte_inter_anr_a5_threshold_2_rsrp", "body", int64(*m.LteInterAnrA5Threshold2Rsrp), 97, false); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *HoAlgorithmConfiguration) validateLteIntraA5Threshold1Rsrp(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.LteIntraA5Threshold1Rsrp) { // not required
+		return nil
+	}
+
+	if err := validate.MinimumInt("lte_intra_a5_threshold_1_rsrp", "body", int64(*m.LteIntraA5Threshold1Rsrp), 0, false); err != nil {
+		return err
+	}
+
+	if err := validate.MaximumInt("lte_intra_a5_threshold_1_rsrp", "body", int64(*m.LteIntraA5Threshold1Rsrp), 97, false); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *HoAlgorithmConfiguration) validateLteIntraA5Threshold2Rsrp(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.LteIntraA5Threshold2Rsrp) { // not required
+		return nil
+	}
+
+	if err := validate.MinimumInt("lte_intra_a5_threshold_2_rsrp", "body", int64(*m.LteIntraA5Threshold2Rsrp), 0, false); err != nil {
+		return err
+	}
+
+	if err := validate.MaximumInt("lte_intra_a5_threshold_2_rsrp", "body", int64(*m.LteIntraA5Threshold2Rsrp), 97, false); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *HoAlgorithmConfiguration) validateQrxlevminSib1(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.QrxlevminSib1) { // not required
+		return nil
+	}
+
+	if err := validate.MinimumInt("qrxlevmin_sib1", "body", int64(m.QrxlevminSib1), -70, false); err != nil {
+		return err
+	}
+
+	if err := validate.MaximumInt("qrxlevmin_sib1", "body", int64(m.QrxlevminSib1), -22, false); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *HoAlgorithmConfiguration) validateQrxlevminSib3(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.QrxlevminSib3) { // not required
+		return nil
+	}
+
+	if err := validate.MinimumInt("qrxlevmin_sib3", "body", int64(m.QrxlevminSib3), -70, false); err != nil {
+		return err
+	}
+
+	if err := validate.MaximumInt("qrxlevmin_sib3", "body", int64(m.QrxlevminSib3), -22, false); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *HoAlgorithmConfiguration) validateQrxlevminoffset(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.Qrxlevminoffset) { // not required
+		return nil
+	}
+
+	if err := validate.MinimumInt("qrxlevminoffset", "body", int64(m.Qrxlevminoffset), 1, false); err != nil {
+		return err
+	}
+
+	if err := validate.MaximumInt("qrxlevminoffset", "body", int64(m.Qrxlevminoffset), 8, false); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *HoAlgorithmConfiguration) validateReselectionPriority(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.ReselectionPriority) { // not required
+		return nil
+	}
+
+	if err := validate.MinimumInt("reselection_priority", "body", int64(m.ReselectionPriority), 1, false); err != nil {
+		return err
+	}
+
+	if err := validate.MaximumInt("reselection_priority", "body", int64(m.ReselectionPriority), 65535, false); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *HoAlgorithmConfiguration) validateSIntrasearch(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.SIntrasearch) { // not required
+		return nil
+	}
+
+	if err := validate.MinimumInt("s_intrasearch", "body", int64(*m.SIntrasearch), 0, false); err != nil {
+		return err
+	}
+
+	if err := validate.MaximumInt("s_intrasearch", "body", int64(*m.SIntrasearch), 31, false); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *HoAlgorithmConfiguration) validateSNonintrasearch(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.SNonintrasearch) { // not required
+		return nil
+	}
+
+	if err := validate.MinimumInt("s_nonintrasearch", "body", int64(*m.SNonintrasearch), 0, false); err != nil {
+		return err
+	}
+
+	if err := validate.MaximumInt("s_nonintrasearch", "body", int64(*m.SNonintrasearch), 31, false); err != nil {
+		return err
+	}
+
 	return nil
 }
 

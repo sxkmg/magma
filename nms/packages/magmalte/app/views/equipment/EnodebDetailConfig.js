@@ -316,7 +316,7 @@ function EnodebManagedRanConfig({
     ],
     [
       {
-        ategory: 'a3 offset anr',
+        category: 'a3 offset anr',
         value:
           enbInfo.enb.enodeb_config?.managed_config?.ho_algorithm_config
             ?.a3_offset_anr ?? '-',
