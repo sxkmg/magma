@@ -16,7 +16,7 @@ class ParameterName():
     # Top-level objects
     DEVICE = 'Device'
     FAP_SERVICE = 'FAPService'
-    HO_A1_THRESHOLD_RSRP = 'A1 threshold rsrp'
+
     # Device info parameters
     GPS_STATUS = 'GPS status'
     PTP_STATUS = 'PTP status'
