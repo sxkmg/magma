@@ -7689,6 +7689,7 @@ definitions:
         type: integer
       ho_algorithm_config:
         $ref: '#/definitions/ho_algorithm_configuration'
+        x-nullable: true
       pci:
         example: 260
         exclusiveMinimum: true
