@@ -1,9 +1,7 @@
 """
 Copyright 2020 The Magma Authors.
-
 This source code is licensed under the BSD-style license found in the
 LICENSE file in the root directory of this source tree.
-
 Unless required by applicable law or agreed to in writing, software
 distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -36,7 +34,6 @@ def register_generic_gateway(
 ) -> None:
     """
     Register a generic magmad gateway.
-
     Args:
         network_id: Network to register inside
         vm_name: Vagrant VM name to pull HWID from
@@ -70,11 +67,9 @@ def construct_magmad_gateway_payload(
     """
     Returns a default development magmad gateway entity given a desired gateway
     ID and a hardware ID pulled from the hardware secrets.
-
     Args:
         gateway_id: Desired gateway ID
         hardware_id: Hardware ID pulled from the VM
-
     Returns:
         Gateway object with fields filled in with reasonable default values
     """
@@ -110,12 +105,10 @@ def get_next_available_gateway_id(
     """
     Returns the next available gateway ID in the sequence gwN for the given
     network.
-
     Args:
         network_id: Network to check for available gateways
         url: API base URL
         admin_cert: Client cert to use with the API
-
     Returns:
         Next available gateway ID in the form gwN
     """
@@ -144,7 +137,6 @@ def does_network_exist(
         network_id: Network to check
         url: API base URL
         admin_cert: Cert for API access
-
     Returns:
         True if the network exists, False otherwise
     """
@@ -161,7 +153,6 @@ def create_tier_if_not_exists(
     """
     Create a placeholder tier on Orchestrator if the specified one doesn't
     already exist.
-
     Args:
         network_id: Network the tier belongs to
         tier_id: ID for the tier
@@ -186,10 +177,8 @@ def create_tier_if_not_exists(
 def get_gateway_hardware_id_from_vagrant(vm_name: str) -> str:
     """
     Get the hardware ID of a gateway running on Vagrant VM
-
     Args:
         vm_name: Name of the vagrant machine to use
-
     Returns:
         Hardware snowflake from the VM
     """
@@ -202,7 +191,6 @@ def get_gateway_hardware_id_from_vagrant(vm_name: str) -> str:
 def get_gateway_hardware_id_from_docker(location_docker_compose: str) -> str:
     """
     Get the hardware ID of a gateway running on Docker
-
     Args:
         location_docker_compose: location of docker compose used to run FEG
         by default feg/gateway/docker
@@ -221,7 +209,6 @@ def get_gateway_hardware_id_from_docker(location_docker_compose: str) -> str:
 def delete_gateway_certs_from_vagrant(vm_name: str):
     """
     Delete certificates and gw_challenge of a gateway running on Vagrant VM
-
     Args:
         vm_name: Name of the vagrant machine to use
     """
@@ -235,7 +222,6 @@ def delete_gateway_certs_from_vagrant(vm_name: str):
 def delete_gateway_certs_from_docker(location_docker_compose: str):
     """
         Delete certificates and gw_challenge of a gateway running on Docker
-
     Args:
         location_docker_compose: location of docker compose used to run FEG
     """
@@ -270,13 +256,11 @@ def is_hw_id_registered(
     Check if a hardware ID is already registered for a given network. Note that
     this is not a true guarantee that a VM is not already registered, as the
     HW ID could be taken on another network.
-
     Args:
         network_id: Network to check
         hw_id: HW ID to check
         url: API base URL
         admin_cert: Cert for API access
-
     Returns:
         (True, gw_id) if the HWID is already registered, (False, '') otherwise
     """
@@ -330,7 +314,6 @@ def cloud_get(
         resource: URI to request
         url: API base URL
         admin_cert: API client certificate
-
     Returns:
         JSON-encoded response content
     """
@@ -360,7 +343,6 @@ def cloud_post(
 ):
     """
     Send a POST request to an API URI
-
     Args:
         resource: URI to request
         data: JSON-serializable payload
@@ -396,12 +378,10 @@ def cloud_delete(
 ) -> Any:
     """
     Send a delete request to an API URI
-
     Args:
         resource: URI to request
         url: API base URL
         admin_cert: API client certificate
-
     Returns:
         JSON-encoded response content
     """
